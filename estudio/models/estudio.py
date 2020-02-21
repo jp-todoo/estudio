@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
- from odoo import models, fields
+from odoo import models, fields
 
 
- class estudio(models.Model):
+class estudio(models.Model):
      _name = 'estudio.estudio'
      _description = 'estudio.estudio'
     
