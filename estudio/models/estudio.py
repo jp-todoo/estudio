@@ -6,6 +6,7 @@
  class estudio(models.Model):
      _name = 'estudio.estudio'
      _description = 'estudio.estudio'
+    
      name = fields.Char()
      Cedula = fields.Integer()
      Edad = fields.Float(compute="_value_pc", store=True)
