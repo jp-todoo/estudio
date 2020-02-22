@@ -1,0 +1,73 @@
+<odoo>
+  <data>
+      
+  <!--    <menuitem name="Estudio" id="estudio_name">
+      <menuitem id="clientes"
+                parent="estudio_name"
+                action="vista_estudio"
+                name="Clientes"/>
+      
+      -->  
+      
+    <!-- explicit list view definition -->
+
+ <record model="ir.ui.view" id="vista_clientes">
+      <field name="name">Lista de Clientes</field>
+      <field name="model">estudio.estudio</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="Cedula"/>
+          <field name="Edad"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>       
+      
+    <record model="ir.actions.act_window" id="vista_estudio">
+      <field name="name">Ventana estudio</field>
+      <field name="res_model">estudio.estudio</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+      
+    <menuitem name="EstudioNEW" id="estudio_name2"/>
+      
+    <menuitem id="clientes_estudio"
+                parent="estudio_name2"
+                action="vista_estudio"
+                name="Clientes"/>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="estudio.action_server">
+      <field name="name">estudio server</field>
+      <field name="model_id" ref="model_estudio_estudio"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="estudio" id="estudio.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="estudio.menu_1" parent="estudio.menu_root"/>
+    <menuitem name="Menu 2" id="estudio.menu_2" parent="estudio.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="estudio.menu_1_list" parent="estudio.menu_1"
+              action="estudio.action_window"/>
+    <menuitem name="Server to list" id="estudio" parent="estudio.menu_2"
+              action="estudio.action_server"/>
+-->    
+  </data>
+</odoo>

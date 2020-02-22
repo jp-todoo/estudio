@@ -1,28 +1,41 @@
 <odoo>
   <data>
+      
+  <!--    <menuitem name="Estudio" id="estudio_name">
+      <menuitem id="clientes"
+                parent="estudio_name"
+                action="vista_estudio"
+                name="Clientes"/>
+      
+      -->  
+      
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="estudio.list">
-      <field name="name">estudio list</field>
+
+ <record model="ir.ui.view" id="vista_clientes">
+      <field name="name">Lista de Clientes</field>
       <field name="model">estudio.estudio</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="Cedula"/>
+          <field name="Edad"/>
+          <field name="description"/>
         </tree>
       </field>
-    </record>
--->
-
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="estudio.action_window">
-      <field name="name">estudio window</field>
+    </record>       
+      
+    <record model="ir.actions.act_window" id="vista_estudio">
+      <field name="name">Ventana estudio</field>
       <field name="res_model">estudio.estudio</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+      
+    <menuitem name="EstudioNEW" id="estudio_name2"/>
+      
+    <menuitem id="clientes_estudio"
+                parent="estudio_name2"
+                action="vista_estudio"
+                name="Clientes"/>
 
     <!-- server action to the one above -->
 <!--
@@ -55,6 +68,6 @@
               action="estudio.action_window"/>
     <menuitem name="Server to list" id="estudio" parent="estudio.menu_2"
               action="estudio.action_server"/>
--->
+-->    
   </data>
 </odoo>
